@@ -1,0 +1,1 @@
+import{r as p,a as t}from"./chunk-FJPRWHXQ-WCT2Tt6K.js";import"./index-DrFu-skq.js";import"./lit-element-C_xYs6Rr.js";var a={renderer:"web-components"};export{a as parameters,p as render,t as renderToCanvas};
