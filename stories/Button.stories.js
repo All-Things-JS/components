@@ -1,16 +1,33 @@
-import { Button } from './Button';
+import { Button } from "../dist/button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'Example/Button',
-  tags: ['autodocs'],
-  render: (args) => Button(args),
+  title: "Example/Button",
+  tags: ["autodocs"],
+  render: (args) => {
+    if (!customElements.get("example-button")) {
+      customElements.define("example-button", Button);
+    }
+
+    const exampleButton = document.createElement("example-button");
+    exampleButton.setAttribute("label", args.label);
+    exampleButton.setAttribute("button-color", args.buttonColor);
+    exampleButton.setAttribute("size", args.size || "medium");
+
+    if (args.primary) {
+      exampleButton.setAttribute("primary", "");
+    }
+
+    exampleButton.onclick = args.onClick;
+
+    return exampleButton;
+  },
   argTypes: {
-    backgroundColor: { control: 'color' },
-    onClick: { action: 'onClick' },
+    buttonColor: { control: "color" },
+    onClick: { action: "onClick" },
     size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
     },
   },
 };
@@ -19,26 +36,26 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button',
+    label: "Button",
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Button',
+    label: "Button",
   },
 };
 
 export const Large = {
   args: {
-    size: 'large',
-    label: 'Button',
+    size: "large",
+    label: "Button",
   },
 };
 
 export const Small = {
   args: {
-    size: 'small',
-    label: 'Button',
+    size: "small",
+    label: "Button",
   },
 };

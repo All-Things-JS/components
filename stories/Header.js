@@ -1,13 +1,18 @@
-import { html } from 'lit';
+import { html } from "lit";
 
-import { Button } from './Button';
-import './header.css';
+import { Button } from "../dist/button";
+import "./header.css";
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
   <header>
     <div class="storybook-header">
       <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <g fill="none" fillRule="evenodd">
             <path
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
@@ -27,17 +32,17 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
       </div>
       <div>
         ${user
-          ? Button({ size: 'small', onClick: onLogout, label: 'Log out' })
+          ? Button({ size: "small", onClick: onLogout, label: "Log out" })
           : html`${Button({
-              size: 'small',
+              size: "small",
               onClick: onLogin,
-              label: 'Log in',
+              label: "Log in",
             })}
             ${Button({
               primary: true,
-              size: 'small',
+              size: "small",
               onClick: onCreateAccount,
-              label: 'Sign up',
+              label: "Sign up",
             })}`}
       </div>
     </div>

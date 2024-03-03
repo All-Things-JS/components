@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-	"docs": "storybook build -o docs --docs"
+    "docs": "storybook build -o docs --docs",
+    "build": "rollup -c rollup.config.mjs",
+    "format": "prettier -w ."
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +19,13 @@
     "@storybook/web-components": "^7.6.14",
     "@storybook/web-components-vite": "^7.6.14",
     "lit": "^3.1.2",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup": "^4.12.0",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-import-css": "^3.5.0",
+    "rollup-plugin-multi-input": "^1.4.1",
     "storybook": "^7.6.14"
   }
 }
