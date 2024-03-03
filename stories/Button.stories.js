@@ -1,4 +1,4 @@
-import { Button } from "../dist/button";
+import { Button } from "../dist/Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
